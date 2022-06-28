@@ -19,8 +19,11 @@ const Hero = () => {
           learn and apply new technologies.
         </p>
         <div>
-          <button>
-            View Work <HiArrowNarrowRight />
+          <button className="group text-white border-2 px-6 py-3 my-2 flex items-center gap-2 hover:bg-green-600 hover:border-green-600 hover:shadow-lg">
+            View Work{" "}
+            <span className="group-hover:rotate-90 duration-500">
+              <HiArrowNarrowRight />
+            </span>
           </button>
         </div>
       </div>
