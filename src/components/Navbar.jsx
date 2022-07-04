@@ -3,9 +3,15 @@ import Logo from "../assets/logo.png";
 import { FaBars, FaGithub, FaTimes, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsFillPersonLinesFill } from "react-icons/bs";
+import NavLinkItem from "./NavLinkItem";
+import MobileLinkItem from "./MobileLinkItem";
 
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+
+  const handleClick = () => {
+    setMobileMenu(!mobileMenu);
+  };
   return (
     <div className=" fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
       <div>
@@ -13,17 +19,14 @@ const Navbar = () => {
       </div>
       {/* main menu */}
       <ul className="hidden md:flex">
-        <li>Home</li>
-        <li>About</li>
-        <li>Skills</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <NavLinkItem item="Home" name="hero" />
+        <NavLinkItem item="About" name="about" />
+        <NavLinkItem item="Skills" name="skills" />
+        <NavLinkItem item="Projects" name="projects" />
+        <NavLinkItem item="Contacts" name="contact" />
       </ul>
 
-      <div
-        className="flex md:hidden z-10"
-        onClick={() => setMobileMenu(!mobileMenu)}
-      >
+      <div className="flex md:hidden z-10" onClick={handleClick}>
         {mobileMenu ? <FaTimes size={25} /> : <FaBars size={25} />}
       </div>
 
@@ -35,21 +38,19 @@ const Navbar = () => {
             : "hidden"
         }
       >
-        <li className="py-6 text-4xl z-in w-full hover:bg-gray-700 text-center">
-          Home
-        </li>
-        <li className="py-6 text-4xl z-in w-full hover:bg-gray-700 text-center">
-          About
-        </li>
-        <li className="py-6 text-4xl z-in w-full hover:bg-gray-700 text-center">
-          Skills
-        </li>
-        <li className="py-6 text-4xl z-in w-full hover:bg-gray-700 text-center">
-          Projects
-        </li>
-        <li className="py-6 text-4xl z-in w-full hover:bg-gray-900 text-center">
-          Contact
-        </li>
+        <MobileLinkItem item="Home" name="hero" handleClick={handleClick} />
+        <MobileLinkItem item="About" name="about" handleClick={handleClick} />
+        <MobileLinkItem item="Skills" name="skills" handleClick={handleClick} />
+        <MobileLinkItem
+          item="Projects"
+          name="projects"
+          handleClick={handleClick}
+        />
+        <MobileLinkItem
+          item="Contacts"
+          name="contact"
+          handleClick={handleClick}
+        />
       </ul>
 
       {/* Social Icons */}
@@ -57,7 +58,8 @@ const Navbar = () => {
         <ul>
           <li className="h-[60px] w-[160px] ml-[-100px] flex justify-between items-center hover:ml-[0] duration-500 bg-blue-600">
             <a
-              href="/"
+              href="https://www.linkedin.com/in/victor-owiti/"
+              target="_blank"
               className="flex justify-between items-center w-full text-gray-300"
             >
               LinkedIn <FaLinkedin size={30} />
@@ -66,7 +68,8 @@ const Navbar = () => {
 
           <li className="h-[60px] w-[160px] ml-[-100px] flex justify-between items-center hover:ml-[0] duration-500 bg-[#333]">
             <a
-              href="/"
+              target="_blank"
+              href="https://github.com/vicowiti"
               className="flex justify-between items-center w-full text-gray-300"
             >
               Github <FaGithub size={30} />
@@ -75,7 +78,8 @@ const Navbar = () => {
 
           <li className="h-[60px] w-[160px] ml-[-100px] flex justify-between items-center hover:ml-[0] duration-500 bg-[#c92a2a]">
             <a
-              href="/"
+              target="_blank"
+              href="mailto:viowiti12@gmail.com"
               className="flex justify-between items-center w-full text-green-300"
             >
               Email <HiOutlineMail size={30} />
@@ -84,6 +88,7 @@ const Navbar = () => {
 
           <li className="h-[60px] w-[160px] ml-[-100px] flex justify-between items-center hover:ml-[0] duration-500 bg-[#566]">
             <a
+              download={true}
               href="/"
               className="flex justify-between items-center w-full text-gray-300"
             >

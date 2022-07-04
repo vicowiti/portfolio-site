@@ -12,10 +12,12 @@ const Contact = () => {
         className="flex flex-col max-w-[600px] w-full text-black"
       >
         <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-green-600 ">
+          <p className="text-4xl text-gray-300 font-bold inline border-b-4 border-green-600 ">
             Contact
           </p>
-          <p className="py-4">Submit the form below and shoot me an email</p>
+          <p className="py-4 text-gray-300">
+            Submit the form below and shoot me an email
+          </p>
         </div>
         <input
           type="text"
