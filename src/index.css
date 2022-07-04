@@ -12,3 +12,15 @@
     @apply cursor-pointer;
   }
 }
+
+.content-div {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  object-fit: cover;
+  background-position: center;
+  height: 400px;
+}
+
+.content-div:hover {
+  background-image: linear-gradient();
+}
