@@ -6,6 +6,8 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import NavLinkItem from "./NavLinkItem";
 import MobileLinkItem from "./MobileLinkItem";
 
+import CV from "/resume001.pdf";
+
 const Navbar = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -88,8 +90,8 @@ const Navbar = () => {
 
           <li className="h-[60px] w-[160px] ml-[-100px] flex justify-between items-center hover:ml-[0] duration-500 bg-[#566]">
             <a
-              download={true}
-              href="/"
+              href={CV}
+              target="_blank"
               className="flex justify-between items-center w-full text-gray-300"
             >
               Resume <BsFillPersonLinesFill size={30} />
